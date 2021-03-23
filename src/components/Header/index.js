@@ -6,7 +6,7 @@ function Header() {
   const [city, setCity] = useContext(CityContext);
 
   const cities = [
-    { id: "", name: "所有縣市" },
+    // { id: "", name: "所有縣市" },
     { id: "Taipei", name: "台北市" },
     { id: "NewTaipei", name: "新北市" },
     { id: "Taoyuan", name: "桃園市" },
@@ -33,9 +33,18 @@ function Header() {
 
   return (
     <Router>
+      <Link
+        to="/scenicSpot"
+        key={"all"}
+        onClick={() => {
+          setCity("");
+        }}
+      >
+        所有縣市
+      </Link>
       {cities.map((city) => (
         <Link
-          to={"/" + city.id}
+          to={"/scenicSpot/" + city.id}
           key={city.id}
           onClick={() => {
             setCity(city.id);
