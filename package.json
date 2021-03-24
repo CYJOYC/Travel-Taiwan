@@ -1,6 +1,7 @@
 {
   "name": "travel-taiwan",
   "version": "0.1.0",
+  "homepage": "https://cyjoyc.github.io/Travel-Taiwan/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -19,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier \"src/**/*.{js, html}\" --write"
+    "format": "prettier \"src/**/*.{js, html}\" --write",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "^2.2.1"
   }
 }
