@@ -14,7 +14,7 @@ function Header() {
   }, [location]);
 
   const cities = [
-    // { id: "", name: "所有縣市" },
+    { id: "", name: "所有縣市" },
     { id: "/Taipei", name: "台北市" },
     { id: "/NewTaipei", name: "新北市" },
     { id: "/Taoyuan", name: "桃園市" },
@@ -42,16 +42,6 @@ function Header() {
   return (
     <Router>
       <div className="city-nav">
-        <Link
-          className={cityChosen === "" ? "item-active city-item" : "city-item"}
-          to="/scenicSpot"
-          key={""}
-          onClick={() => {
-            setCityChosen("");
-          }}
-        >
-          所有縣市
-        </Link>
         {cities.map((city) => (
           <Link
             className={
