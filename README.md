@@ -13,15 +13,15 @@ This website provides introductions of the scenic spots in Taiwan, and can be fi
 - HTML/CSS/JavaScript
 - RWD
 
-![infinite scroll](./src/assests/infinite scroll.gif)
+![infinite scroll](https://github.com/CYJOYC/Travel-Taiwan/blob/main/src/assests/infinite%20scroll.gif)
 
-![city change](./src/assests/city change.gif)
+![city change](https://github.com/CYJOYC/Travel-Taiwan/blob/main/src/assests/city%20change.gif)
 
-![url change](./src/assests/url change.gif)
+![url change](https://github.com/CYJOYC/Travel-Taiwan/blob/main/src/assests/url%20change.gif)
 
 ## Project structure
 
-![project structure](./src/assests/project structure.png)
+![project structure](https://github.com/CYJOYC/Travel-Taiwan/blob/main/src/assests/project%20structure.png)
 
 ## Start script
 
