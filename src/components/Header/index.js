@@ -3,7 +3,7 @@ import { useContext } from "react";
 import CityContext from "../../CityContext";
 
 function Header() {
-  const [city, setCity] = useContext(CityContext);
+  const [cityChosen, setCityChosen] = useContext(CityContext);
 
   const cities = [
     // { id: "", name: "所有縣市" },
@@ -33,26 +33,32 @@ function Header() {
 
   return (
     <Router>
-      <Link
-        to="/scenicSpot"
-        key={"all"}
-        onClick={() => {
-          setCity("");
-        }}
-      >
-        所有縣市
-      </Link>
-      {cities.map((city) => (
+      <div className="city-nav">
         <Link
-          to={"/scenicSpot/" + city.id}
-          key={city.id}
+          className={cityChosen === "" ? "item-active city-item" : "city-item"}
+          to="/scenicSpot"
+          key={""}
           onClick={() => {
-            setCity(city.id);
+            setCityChosen("");
           }}
         >
-          {city.name}
+          所有縣市
         </Link>
-      ))}
+        {cities.map((city) => (
+          <Link
+            className={
+              cityChosen === city.id ? "item-active city-item" : "city-item"
+            }
+            to={"/scenicSpot/" + city.id}
+            key={city.id}
+            onClick={() => {
+              setCityChosen(city.id);
+            }}
+          >
+            {city.name}
+          </Link>
+        ))}
+      </div>
     </Router>
   );
 }
