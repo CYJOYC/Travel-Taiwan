@@ -1,6 +1,5 @@
 import CityContext from "../../CityContext";
 import { useContext, useState, useEffect } from "react";
-// import useStateWithCallbackLazy from "use-state-with-callback";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 
 const ScenicSpot = () => {
@@ -8,43 +7,39 @@ const ScenicSpot = () => {
   const [page, setPage] = useState("0");
   const [scenicSpots, setScenicSpots] = useState([]);
   const [cityChange, setCityChange] = useState(false);
-  const [loadMore, setLoadMore] = useState(false);
+  const [loading, setloading] = useState(false);
   const [hasNextPage, setHasNextPage] = useState(true);
 
   const fetchData = (page) => {
-    // if (hasNextPage) {
-    let scenicSpotUrl =
-      "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot/" +
-      city +
-      "?$top=30&$skip=" +
-      page +
-      "&$format=JSON";
+    if (hasNextPage) {
+      let scenicSpotUrl =
+        "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot" +
+        city +
+        "?$top=30&$skip=" +
+        page +
+        "&$format=JSON";
 
-    fetch(scenicSpotUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("fetch");
-        setScenicSpots([...scenicSpots, ...data]);
-        setLoadMore(false);
-        console.log(data.length);
-        if (data.length < 30) {
-          setHasNextPage(false);
-        }
-      })
-      .catch(console.error);
-    // }
+      fetch(scenicSpotUrl)
+        .then((res) => res.json())
+        .then((data) => {
+          setScenicSpots([...scenicSpots, ...data]);
+          setloading(false);
+          if (data.length < 30) {
+            setHasNextPage(false);
+          }
+        })
+        .catch(console.error);
+    }
   };
 
   useEffect(() => {
     if (cityChange === true) {
-      console.log("cityChange");
       fetchData(page);
       setCityChange(false);
     }
   }, [cityChange]);
 
   useEffect(() => {
-    console.log("city");
     setScenicSpots([]);
     setPage("0");
     setHasNextPage(true);
@@ -52,16 +47,17 @@ const ScenicSpot = () => {
   }, [city]);
 
   const handleLoadMore = () => {
-    console.log("loadMore");
-    setLoadMore(true);
-    let newPage = String(parseInt(page) + 30);
-    setPage(newPage);
-    fetchData(newPage);
+    if (hasNextPage) {
+      setloading(true);
+      let newPage = String(parseInt(page) + 30);
+      setPage(newPage);
+      fetchData(newPage);
+    }
   };
 
   const infiniteRef = useInfiniteScroll({
-    loadMore,
-    hasNextPage: true,
+    loading,
+    hasNextPage: hasNextPage,
     onLoadMore: handleLoadMore,
     scrollContainer: "window",
   });
@@ -86,13 +82,8 @@ const ScenicSpot = () => {
           })}
         </div>
       )}
-      <div className="load-more">{loadMore ? "下載更多景點中..." : ""}</div>
+      <div className="load-more">{loading ? "下載更多景點中..." : ""}</div>
       <div className="no-more">{hasNextPage ? "" : "已無其他景點"}</div>
-      {/* {loadMore ? <div className="load-more">Loading More</div> : <div>Not Loading</div>} */}
-      {/* <div className="loading" ref={loader}>
-        Load More
-      </div> */}
-      {/* <button onClick={fetchMore}>Fetch More</button> */}
     </div>
   );
 };
