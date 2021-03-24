@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Travel-Taiwan/scenicSpot/static/css/main.9dfdcef6.chunk.css",
-    "main.js": "/Travel-Taiwan/scenicSpot/static/js/main.b6aa9d46.chunk.js",
-    "main.js.map": "/Travel-Taiwan/scenicSpot/static/js/main.b6aa9d46.chunk.js.map",
-    "runtime-main.js": "/Travel-Taiwan/scenicSpot/static/js/runtime-main.b4ff12f3.js",
-    "runtime-main.js.map": "/Travel-Taiwan/scenicSpot/static/js/runtime-main.b4ff12f3.js.map",
-    "static/js/2.837f7528.chunk.js": "/Travel-Taiwan/scenicSpot/static/js/2.837f7528.chunk.js",
-    "static/js/2.837f7528.chunk.js.map": "/Travel-Taiwan/scenicSpot/static/js/2.837f7528.chunk.js.map",
-    "static/js/3.a00db8dc.chunk.js": "/Travel-Taiwan/scenicSpot/static/js/3.a00db8dc.chunk.js",
-    "static/js/3.a00db8dc.chunk.js.map": "/Travel-Taiwan/scenicSpot/static/js/3.a00db8dc.chunk.js.map",
-    "index.html": "/Travel-Taiwan/scenicSpot/index.html",
-    "static/css/main.9dfdcef6.chunk.css.map": "/Travel-Taiwan/scenicSpot/static/css/main.9dfdcef6.chunk.css.map",
-    "static/js/2.837f7528.chunk.js.LICENSE.txt": "/Travel-Taiwan/scenicSpot/static/js/2.837f7528.chunk.js.LICENSE.txt"
+    "main.css": "/Travel-Taiwan/static/css/main.9dfdcef6.chunk.css",
+    "main.js": "/Travel-Taiwan/static/js/main.b6aa9d46.chunk.js",
+    "main.js.map": "/Travel-Taiwan/static/js/main.b6aa9d46.chunk.js.map",
+    "runtime-main.js": "/Travel-Taiwan/static/js/runtime-main.73decec9.js",
+    "runtime-main.js.map": "/Travel-Taiwan/static/js/runtime-main.73decec9.js.map",
+    "static/js/2.837f7528.chunk.js": "/Travel-Taiwan/static/js/2.837f7528.chunk.js",
+    "static/js/2.837f7528.chunk.js.map": "/Travel-Taiwan/static/js/2.837f7528.chunk.js.map",
+    "static/js/3.a00db8dc.chunk.js": "/Travel-Taiwan/static/js/3.a00db8dc.chunk.js",
+    "static/js/3.a00db8dc.chunk.js.map": "/Travel-Taiwan/static/js/3.a00db8dc.chunk.js.map",
+    "index.html": "/Travel-Taiwan/index.html",
+    "static/css/main.9dfdcef6.chunk.css.map": "/Travel-Taiwan/static/css/main.9dfdcef6.chunk.css.map",
+    "static/js/2.837f7528.chunk.js.LICENSE.txt": "/Travel-Taiwan/static/js/2.837f7528.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b4ff12f3.js",
+    "static/js/runtime-main.73decec9.js",
     "static/js/2.837f7528.chunk.js",
     "static/css/main.9dfdcef6.chunk.css",
     "static/js/main.b6aa9d46.chunk.js"
