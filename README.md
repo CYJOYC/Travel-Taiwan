@@ -13,15 +13,15 @@ This website provides introductions of the scenic spots in Taiwan, and can be fi
 - HTML/CSS/JavaScript
 - RWD
 
-![infinite scroll]("./src/assests/infinite scroll.gif")
+![infinite scroll](./src/assests/infinite scroll.gif)
 
-![city change]("./src/assests/city change.gif")
+![city change](./src/assests/city change.gif)
 
-![url change]("./src/assests/url change.gif")
+![url change](./src/assests/url change.gif)
 
 ## Project structure
 
-![project structure]("./src/assests/project structure.png")
+![project structure](./src/assests/project structure.png)
 
 ## Start script
 
