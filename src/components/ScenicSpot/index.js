@@ -63,11 +63,11 @@ const ScenicSpot = () => {
   });
 
   return (
-    <div className="spots-list-background" ref={infiniteRef}>
+    <div className="spots-list-background">
       {scenicSpots.length === 0 ? (
         <div className="loading">景點下載中</div>
       ) : (
-        <div id="spots-list">
+        <div id="spots-list" ref={infiniteRef}>
           {scenicSpots.map((scenicSpot) => {
             return (
               <div className="spot-item" key={scenicSpot.ID}>
