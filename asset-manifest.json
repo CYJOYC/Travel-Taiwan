@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.9dfdcef6.chunk.css",
-    "main.js": "/static/js/main.631512b0.chunk.js",
-    "main.js.map": "/static/js/main.631512b0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f09b308e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f09b308e.js.map",
-    "static/js/2.3ca77504.chunk.js": "/static/js/2.3ca77504.chunk.js",
-    "static/js/2.3ca77504.chunk.js.map": "/static/js/2.3ca77504.chunk.js.map",
-    "static/js/3.a00db8dc.chunk.js": "/static/js/3.a00db8dc.chunk.js",
-    "static/js/3.a00db8dc.chunk.js.map": "/static/js/3.a00db8dc.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.9dfdcef6.chunk.css.map": "/static/css/main.9dfdcef6.chunk.css.map",
-    "static/js/2.3ca77504.chunk.js.LICENSE.txt": "/static/js/2.3ca77504.chunk.js.LICENSE.txt"
+    "main.css": "/Travel-Taiwan/static/css/main.9dfdcef6.chunk.css",
+    "main.js": "/Travel-Taiwan/static/js/main.202ece37.chunk.js",
+    "main.js.map": "/Travel-Taiwan/static/js/main.202ece37.chunk.js.map",
+    "runtime-main.js": "/Travel-Taiwan/static/js/runtime-main.20e4750d.js",
+    "runtime-main.js.map": "/Travel-Taiwan/static/js/runtime-main.20e4750d.js.map",
+    "static/js/2.3ca77504.chunk.js": "/Travel-Taiwan/static/js/2.3ca77504.chunk.js",
+    "static/js/2.3ca77504.chunk.js.map": "/Travel-Taiwan/static/js/2.3ca77504.chunk.js.map",
+    "index.html": "/Travel-Taiwan/index.html",
+    "static/css/main.9dfdcef6.chunk.css.map": "/Travel-Taiwan/static/css/main.9dfdcef6.chunk.css.map",
+    "static/js/2.3ca77504.chunk.js.LICENSE.txt": "/Travel-Taiwan/static/js/2.3ca77504.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f09b308e.js",
+    "static/js/runtime-main.20e4750d.js",
     "static/js/2.3ca77504.chunk.js",
     "static/css/main.9dfdcef6.chunk.css",
-    "static/js/main.631512b0.chunk.js"
+    "static/js/main.202ece37.chunk.js"
   ]
 }
