@@ -11,7 +11,7 @@ function Header() {
     let re = "/scenicSpot";
     let currentCity = location.pathname.replace(re, "");
     setCityChosen(currentCity);
-  }, [location]);
+  }, [location, setCityChosen]);
 
   const cities = [
     { id: "", name: "所有縣市" },
