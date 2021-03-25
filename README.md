@@ -27,7 +27,11 @@ This website provides introductions of the scenic spots in Taiwan, and can be fi
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### npm start
+git clone git@github.com:CYJOYC/Travel-Taiwan.git
+cd travel-taiwan
+yarn # Install dependencies
+yarn build # Build the production version
+yarn start # Start the production server
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
