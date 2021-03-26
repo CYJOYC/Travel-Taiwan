@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const CityContext = createContext(["all", () => {}]);
+const CityContext = createContext(["", () => {}]);
 
 export default CityContext;

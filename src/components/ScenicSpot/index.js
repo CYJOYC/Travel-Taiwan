@@ -1,6 +1,5 @@
 import CityContext from "../../CityContext";
 import { useContext, useState, useEffect } from "react";
-import useInfiniteScroll from "react-infinite-scroll-hook";
 
 const ScenicSpot = () => {
   const [city] = useContext(CityContext);
@@ -9,6 +8,7 @@ const ScenicSpot = () => {
   const [cityChange, setCityChange] = useState(false);
   const [loading, setloading] = useState(false);
   const [hasNextPage, setHasNextPage] = useState(true);
+  const [isBottom, setIsBottom] = useState(false);
 
   const fetchData = (page) => {
     if (hasNextPage) {
@@ -22,8 +22,10 @@ const ScenicSpot = () => {
       fetch(scenicSpotUrl)
         .then((res) => res.json())
         .then((data) => {
+          setCityChange(false);
           setScenicSpots([...scenicSpots, ...data]);
           setloading(false);
+          setIsBottom(false);
           if (data.length < 30) {
             setHasNextPage(false);
           }
@@ -32,42 +34,50 @@ const ScenicSpot = () => {
     }
   };
 
+  function handleScroll() {
+    const scrollTop =
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
+    const scrollHeight =
+      (document.documentElement && document.documentElement.scrollHeight) ||
+      document.body.scrollHeight;
+    if (scrollTop + window.innerHeight >= scrollHeight) {
+      setIsBottom(true);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isBottom && hasNextPage) {
+      setloading(true);
+      let newPage = String(parseInt(page) + 30);
+      setPage(newPage);
+      fetchData(newPage);
+    }
+  }, [isBottom]);
+
   useEffect(() => {
     if (cityChange === true) {
       fetchData(page);
-      setCityChange(false);
     }
   }, [cityChange]);
 
   useEffect(() => {
     setScenicSpots([]);
     setPage("0");
+    setloading(true);
     setHasNextPage(true);
     setCityChange(true);
   }, [city]);
 
-  const handleLoadMore = () => {
-    if (hasNextPage) {
-      setloading(true);
-      let newPage = String(parseInt(page) + 30);
-      setPage(newPage);
-      fetchData(newPage);
-    }
-  };
-
-  const infiniteRef = useInfiniteScroll({
-    loading,
-    hasNextPage: hasNextPage,
-    onLoadMore: handleLoadMore,
-    scrollContainer: "window",
-  });
-
   return (
-    <div className="spots-list-background">
-      {scenicSpots.length === 0 ? (
-        <div className="loading">景點下載中</div>
-      ) : (
-        <div id="spots-list" ref={infiniteRef}>
+    <>
+      <div className="spots-list-background">
+        <div id="spots-list">
           {scenicSpots.map((scenicSpot) => {
             return (
               <div className="spot-item" key={scenicSpot.ID}>
@@ -81,10 +91,16 @@ const ScenicSpot = () => {
             );
           })}
         </div>
+        <div className="load-more">{loading ? "下載更多景點中..." : ""}</div>
+        <div className="no-more">{hasNextPage ? "" : "已無其他景點"}</div>
+      </div>
+      {scenicSpots.length === 0 ? (
+        <div className="loading">景點下載中</div>
+      ) : (
+        <></>
       )}
-      <div className="load-more">{loading ? "下載更多景點中..." : ""}</div>
-      <div className="no-more">{hasNextPage ? "" : "已無其他景點"}</div>
-    </div>
+      ;
+    </>
   );
 };
 
