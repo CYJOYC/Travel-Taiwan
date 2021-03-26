@@ -10,7 +10,7 @@ const ScenicSpot = () => {
   const [hasNextPage, setHasNextPage] = useState(true);
   const [isBottom, setIsBottom] = useState(false);
 
-  const fetchData = (page) => {
+  function fetchData(page) {
     if (hasNextPage) {
       let scenicSpotUrl =
         "https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot" +
@@ -32,7 +32,7 @@ const ScenicSpot = () => {
         })
         .catch(console.error);
     }
-  };
+  }
 
   function handleScroll() {
     const scrollTop =

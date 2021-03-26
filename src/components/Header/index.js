@@ -6,13 +6,6 @@ import { useLocation } from "react-router-dom";
 function Header() {
   const [cityChosen, setCityChosen] = useContext(CityContext);
   const location = useLocation();
-
-  useEffect(() => {
-    let re = "/scenicSpot";
-    let currentCity = location.pathname.replace(re, "");
-    setCityChosen(currentCity);
-  }, [location, setCityChosen]);
-
   const cities = [
     { id: "", name: "所有縣市" },
     { id: "/Taipei", name: "台北市" },
@@ -38,6 +31,12 @@ function Header() {
     { id: "/PenghuCounty", name: "澎湖縣" },
     { id: "/LienchiangCounty", name: "連江縣" },
   ];
+
+  useEffect(() => {
+    let re = "/scenicSpot";
+    let currentCity = location.pathname.replace(re, "");
+    setCityChosen(currentCity);
+  }, [location, setCityChosen]);
 
   return (
     <Router>
